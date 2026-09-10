@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A-frame Trial</title>
+    <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="image1" src="images/image1.jpg" />
+        <img id="image2" src="images/image2.jpg" />
+        <img id="image3" src="images/image3.jpg" />
+      </a-assets>
+      <!-- alternative approach? -->
+      <!-- https://aframe.io/docs/1.8.0/introduction/interactions-and-controllers.html -->
+      <a-entity cursor="rayOrigin: mouse" raycaster="objects: .interactive"></a-entity>
+      <a-entity id="my-entity" position="0 0 -4">
+        <!-- Image holders -->
+        <a-entity
+        id="image1Holder" position="0 .5 -.5" geometry="primitive: plane; height: 1; width: 1" material="shader: flat; src: #image1; opacity: 0; transparent: true"></a-entity>
+        <a-entity
+        id="image2Holder" position="0 .5 -.5" geometry="primitive: plane; height: 1; width: 1" material="shader: flat; src: #image2; opacity: 0; transparent: true"></a-entity>
+        <a-entity
+        id="image3Holder" position="0 .5 -.5" geometry="primitive: plane; height: 1; width: 1" material="shader: flat; src: #image3; 
+        opacity: 0; transparent: true"></a-entity>
+        <!-- Controls -->
+     <a-box class="interactive" multiple-select="target:#image1Holder" color="red" position="-.3 0 0" depth="0.2"
+      height="0.1" width="0.2"></a-box>
+     <a-box class="interactive" multiple-select="target:#image2Holder" color="yellow" position="0 0 0" depth="0.2"
+      height="0.1" width="0.2"></a-box>
+     <a-box class="interactive" multiple-select="target:#image3Holder" color="blue" position=".3 0 0" depth="0.2"
+      height="0.1" width="0.2"></a-box>
+        <!--Base plane -->
+        <a-plane
+          position="0 0 0"
+          rotation="-90 0 0"
+          width="1"
+          height="1"
+          color="#7BC8A4">
+        </a-plane>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
