@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phaser Tiled Demo 26</title>
+    <script src="lib/phaser.min.js"></script>
+    <script src="scenes/Scene1.js"></script>
+    <script>
+        var config = {
+            type: Phaser.AUTO,
+            width: 960,
+            height: 800,
+            scene: Scene1,
+            physics: {
+                default: 'arcade',
+                arcade:{
+                    debug:true
+                }
+            },
+        };
+        var game = new Phaser.Game(config);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
